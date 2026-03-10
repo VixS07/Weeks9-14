@@ -5,6 +5,7 @@ public class ControllerInput : MonoBehaviour
 {
     public float speed = 5f;
     public Vector2 movement;
+    public Vector2 looking;
     public AudioSource SFX;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -16,8 +17,15 @@ public class ControllerInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //for mvoement
         //transform.position += (Vector3) movement * speed * Time.deltaTime;
-        transform.position = movement;
+
+        //for mouse
+        //transform.position = movement;
+
+        //for look
+        transform.eulerAngles = (Vector3)looking * speed * Time.deltaTime;
+
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -40,4 +48,8 @@ public class ControllerInput : MonoBehaviour
         movement = Camera.main.ScreenToWorldPoint(context.ReadValue<Vector2>());
     }
     
+    public void OnLook(InputAction.CallbackContext context)
+    {
+        looking = context.ReadValue<Vector2>();
+    }
 }
