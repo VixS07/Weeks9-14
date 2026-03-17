@@ -6,6 +6,10 @@ public class Grower : MonoBehaviour
     public Transform treeTransform;
     public Transform appleTransform;
     public float applet = 1;
+
+    Coroutine theGrowingCoroutine;
+    Coroutine theTreeCoroutine;
+    Coroutine theAppleCoroutine;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,16 +32,32 @@ public class Grower : MonoBehaviour
     {
         //StartCoroutine(GrowTree());
         //StartCoroutine(GrowApple());
-        StartCoroutine(StartTheGrowing());
+
+        if(theGrowingCoroutine != null)
+        {
+            StopCoroutine(theGrowingCoroutine);
+        }
+
+        if (theTreeCoroutine != null)
+        {
+            StopCoroutine(theTreeCoroutine);
+        }
+
+        if (theAppleCoroutine != null)
+        {
+            StopCoroutine(theAppleCoroutine);
+        }
+
+        theGrowingCoroutine = StartCoroutine(StartTheGrowing());
     }
 
     IEnumerator StartTheGrowing()
     {
         //we do it this way bc its all in one place, and you can put things inbetween the different yields.
         Debug.Log("Starting...");
-        yield return StartCoroutine(GrowTree());
+        yield return theTreeCoroutine = StartCoroutine(GrowTree());
         Debug.Log("... tree finished, starting apple");
-        yield return StartCoroutine(GrowApple());
+        yield return theAppleCoroutine = StartCoroutine(GrowApple());
         Debug.Log("...Done!");
     }
 
