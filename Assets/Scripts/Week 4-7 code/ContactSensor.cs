@@ -25,13 +25,14 @@ public class ContactSensor : MonoBehaviour
             if (isInHazard)
             {
                 //we're still in the hazard
+                OnEnterHazard.Invoke();
             }
             else
             {
                 //just entered the hazard, do something
                 //Y: player has tripped the sensor
                 isInHazard = true;
-                Debug.Log("Entered the hazard");
+                Debug.Log("Entered the trigger");
                 OnEnterHazard.Invoke();
             }
 
@@ -42,10 +43,9 @@ public class ContactSensor : MonoBehaviour
             {
                 //we just left the hazard
                 //N: player has not tripped the sensor
-                isInHazard = false;
-                Debug.Log("Exited the hazard");
-                OnExitHazard.Invoke();
-                OnRandomNumber.Invoke(Random.Range(0, 10));
+                //isInHazard = false;
+                Debug.Log("Exited the trigger");
+                OnEnterHazard.Invoke();
             }
             else
             {
