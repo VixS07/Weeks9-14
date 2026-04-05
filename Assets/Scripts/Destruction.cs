@@ -15,7 +15,7 @@ public class Destruction : MonoBehaviour
         
     }
 
-    public void OnClick(InputAction)
+
 
     IEnumerator Crash()
     {
