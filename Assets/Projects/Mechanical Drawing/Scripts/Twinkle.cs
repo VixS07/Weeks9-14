@@ -6,8 +6,8 @@ public class Twinkle : MonoBehaviour
 {
     public AnimationCurve curve;
     public float t;
-    Vector2 bottomLeft;
-    Vector2 topRight;
+    public Vector2 bottomLeft;
+    public Vector2 topRight;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
