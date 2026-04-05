@@ -47,7 +47,6 @@ public class DontWalkOnGrass : MonoBehaviour
             if (tilemap.GetTile(cell) != grass)
             {
                 t = 0;
-                if()
                 StartCoroutine(LerpMove());
             }
         }
