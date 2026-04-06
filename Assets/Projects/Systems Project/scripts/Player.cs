@@ -117,9 +117,11 @@ public class Player : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        //find out which way the player is trying to move and store it in a vector2
-        movement = context.ReadValue<Vector2>();
-
+        if (context.performed || context.canceled)
+        {
+            //find out which way the player is trying to move and store it in a vector2
+            movement = context.ReadValue<Vector2>();
+        }
         }
 
 }
