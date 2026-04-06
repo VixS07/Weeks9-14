@@ -28,4 +28,9 @@ public class HealthTrigger : MonoBehaviour
         }
         isTakingDamage=true;
     }
+
+    public void LeftSpike()
+    {
+        isTakingDamage = false;
+    }
 }
