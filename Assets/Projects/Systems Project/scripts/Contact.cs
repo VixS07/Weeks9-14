@@ -19,6 +19,10 @@ public class Contact : MonoBehaviour
         {
             onPlayerTouch.Invoke();
         }
+        else
+        {
+            onPlayerLeave.Invoke();
+        }
     }
 
     public void DeleteSelf()
