@@ -14,7 +14,15 @@ public class UIHearts : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        //start with three hearts
+        for (int i = 0; i < 3; i++)
+        {
+            newHeart = Instantiate(heartPrefab, transform);
+            Vector2 heartPos = newHeart.transform.position;
+            heartPos.x += ListOfHearts.Count * dist;
+            newHeart.transform.position = heartPos;
+            ListOfHearts.Add(newHeart);
+        }
     }
 
     // Update is called once per frame
