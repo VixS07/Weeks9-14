@@ -61,7 +61,6 @@ public class Player : MonoBehaviour
             //get the cell of the next position in the current tilemap
             nextCell = walls[i].WorldToCell(nextMovement);
             Tile wallTile = (Tile)walls[i].GetTile(nextCell);
-            Debug.Log("Checking cell: " + nextCell + " | Tile: " + wallTile);
 
             //checks if either tilemap has a wall tile in the next position, if it does then the player can't move
             if (wallTile != null)
@@ -77,7 +76,6 @@ public class Player : MonoBehaviour
         if (wallThere)
         {
             movement = Vector2.zero;
-            Debug.Log("Wall in the way");
         }
         else
         {
