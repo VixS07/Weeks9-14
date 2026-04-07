@@ -14,13 +14,13 @@ public class SpikeMove : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        StartMove();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        StartMove();
 
     }
 
