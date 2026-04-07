@@ -17,6 +17,7 @@ public class LocalMultiplayerManager : MonoBehaviour
 
         LocalMultiplayerController controller = player.GetComponent<LocalMultiplayerController>();
         controller.manager = this;
+
     }
 
     public void PlayerAttacking(PlayerInput attackingPlayer)
