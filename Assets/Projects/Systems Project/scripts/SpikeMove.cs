@@ -24,13 +24,15 @@ public class SpikeMove : MonoBehaviour
 
         if (height > 0)
         {
-            height += 1 * Time.deltaTime;
+            Debug.Log("being lowered..."); 
+            height -= 1 * Time.deltaTime;
             spike.localScale = new Vector2 (1, height);
+            yield return null;
         }
         if(height == 0)
         {
             Debug.Log("done!");
         }
-        yield return null;
+        
     }
 }
